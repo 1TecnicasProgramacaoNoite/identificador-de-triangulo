@@ -1,4 +1,4 @@
-package validacaotriangulo;
+package pct;
 
 import java.util.Scanner;
 
@@ -20,17 +20,17 @@ class ValidacaoTriangulo {
         c = entrada.nextFloat();
 
         //processamento 
-        if ((a < (b + c)) && (b < (a + c)) && (c < (a + b)))  {
-            System.out.println("As medidas " + a + b + c +  " formam triangulo");
-            if (a <= 0 || b <= 0 || c <= 0) 
-              System.out.print("As medidas " + a + b + c + " nao formam triangulo");
-                if (a == b && a == c) {
-                    System.out.println("O Triangulo e equilatero!");
-                } else if (a == b && a == c) {
-                    System.out.println("O trinagulo isoceles!");
-                } else {
-                    System.out.println("O triangulo e escaleno");
+        if ((a < (b + c)) && (b < (a + c)) && (c < (a + b))) {
+            System.out.println("As medidas " + a +" e "+ b +" e "+ c + " formam triangulo");
+            if (a == b && a == c) {
+                System.out.println("O Triangulo e equilatero!");
+            } else if ((a == b) || (b == c) || (c == a)) {
+                System.out.println("O trinagulo isoceles!");
+            } else {
+                System.out.println("O triangulo e escaleno");
             }
+        } else {
+            System.err.println("As medidas " + a +" e " + b + " e " + c + " nao formam triangulo!");
         }
     }
-}          
+}
